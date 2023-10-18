@@ -1,0 +1,33 @@
+<!-- Dynamically display a list of food items and prices using HTML & JavaScript -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Menu</title>
+</head>
+<body>
+    <h1>Food Menu</h1>
+    
+    <ul id="food-list">
+        
+    </ul>
+
+    <script>
+        
+        const menuItems = [
+            { name: "Burger", price: 5.99 },
+            { name: "Pizza", price: 8.99 },
+            { name: "Salad", price: 4.99 },
+            { name: "Pasta", price: 7.99 },
+            { name: "Sushi", price: 12.99 }
+        ];
+
+        const foodList = document.getElementById("food-list");
+
+        menuItems.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${item.name}: $${item.price.toFixed(2)}`;
+            foodList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
