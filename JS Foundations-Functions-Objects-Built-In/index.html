@@ -1,0 +1,29 @@
+<!-- Create an application that, on button click, runs a function that prints out a users name, age, and occupation. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Info Application</title>
+</head>
+<body>
+  <button id="userInfoButton">Print User Info</button>
+
+  <script>
+    
+    function printUserInfo(user) {
+      console.log(`Name: ${user.name}`);
+      console.log(`Age: ${user.age}`);
+      console.log(`Occupation: ${user.occupation}`);
+    }
+
+    
+    document.getElementById("userInfoButton").addEventListener("click", function() {
+      const user = {
+        name: "John Doe",
+        age: 30,
+        occupation: "Web Developer"
+      };
+      printUserInfo(user);
+    });
+  </script>
+</body>
+</html>
