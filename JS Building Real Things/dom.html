@@ -1,0 +1,29 @@
+  <!--Create a new HTML file named dom.html and include a button with the class btn and btn_inline.
+
+Add an onclick event to this button that will call a JavaScript function named changeBackground().
+
+Within the same HTML file, create a <script> section. Inside this section, define the changeBackground() function. When executed, this function should change the background color of the document.-->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events Exercise</title>
+</head>
+<body>
+
+<button class="btn btn_inline" onclick="changeBackground()">Change Background Color</button>
+
+<script>
+    
+    function changeBackground() {
+      
+        let body = document.body;
+
+        let randomColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+        body.style.backgroundColor = randomColor;
+    }
+</script>
+
+</body>
+</html>

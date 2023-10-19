@@ -1,0 +1,75 @@
+<!--Use JavaScript to select the element with an ID of "myDiv" and change its background color to "lightblue". Select all the paragraph (<p>) elements on the page and log their inner text.-->
+  <div id="myDiv">This is a div</div>
+  <p>First paragraph.</p>
+  <p>Second paragraph.</p>
+  
+  <script>
+    const myDiv = document.getElementById("myDiv");
+    myDiv.style.backgroundColor = "lightblue";
+  
+    const paragraphs = document.querySelectorAll("p");
+    paragraphs.forEach(function(paragraph) {
+      console.log(paragraph.innerText);
+    });
+  </script>
+
+<!--For the provided input element, add an event listener to log every keypress made by the user.
+Display the current content of the input in a separate paragraph below the input every time the user types. Starting Code:-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Event Example</title>
+</head>
+<body>
+    <input type="text" id="textInput" />
+    <p id="textDisplay"></p>
+
+    <script>
+        const inputElement = document.getElementById('textInput');
+        const textDisplayElement = document.getElementById('textDisplay');
+
+        inputElement.addEventListener('keyup', function() {
+            const currentText = inputElement.value;
+            textDisplayElement.textContent = 'Current content: ' + currentText;
+        });
+    </script>
+</body>
+</html>
+
+<!--Loop through the provided list of items.
+For each item, create a new li element, set its text to the item's name, and append it to the provided ul.
+Ensure that the background color of every even item is "gray"-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        #itemList li:nth-child(even) {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <ul id="itemList"></ul>
+    <script>
+        const items = [
+            { name: 'Item 1' },
+            { name: 'Item 2' },
+            { name: 'Item 3' },
+            { name: 'Item 4' }
+        ];
+
+        const ul = document.getElementById('itemList');
+
+        items.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = item.name;
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+</head>
+<body>
+    <!-- Existing content -->
+
+    <button class="btn_onclick">Button 1</button>
+    <button class="btn_onclick">Button 2</button>
+    <button class="btn_onclick">Button 3</button>
+
+    <script>
+        const buttons = document.querySelectorAll('.btn_onclick');
+
+        buttons.forEach((button, index) => {
+            button.onclick = () => {
+                const hue = Math.floor(Math.random() * 360);
+                document.body.style.backgroundColor = `hsl(${hue}, 70%, 80%)`;
+            };
+        });
+
+        // Create a new button element
+        const newButton = document.createElement('button');
+        newButton.textContent = 'Click Me';
+
+        // Append the new button to the end of the body
+        document.body.appendChild(newButton);
+
+        // Add an event listener to the new button
+        newButton.addEventListener('click', function() {
+            alert('Button was clicked!');
+        });
+    </script>
+</body>
+</html>
